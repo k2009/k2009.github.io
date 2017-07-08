@@ -8,10 +8,10 @@
   <meta name="description" content="1. 递归递归就是自己调自己，递归在前端里面算是一种比较常用的算法。假设现在有一堆数据要处理，要实现上一次请求完成了，才能去调下一个请求。一个是可以用Promise，就像《前端与SQL》这篇文章里面提到的。但是有时候并不想引入Promise，能简单处理先简单处理。这个时候就可以用递归，如下代码所示： 12345678910111213var ids = [34112, 98325, 68125];">
 <meta property="og:type" content="article">
 <meta property="og:title" content="接触过的前端数据结构与算法">
-<meta property="og:url" content="http://blog.kkk.world/2017/07/08/接触过的前端数据结构与算法/index.html">
+<meta property="og:url" content="blog.kkk.world/2017/07/08/接触过的前端数据结构与算法/index.html">
 <meta property="og:site_name" content="Xiaok`s blog">
 <meta property="og:description" content="1. 递归递归就是自己调自己，递归在前端里面算是一种比较常用的算法。假设现在有一堆数据要处理，要实现上一次请求完成了，才能去调下一个请求。一个是可以用Promise，就像《前端与SQL》这篇文章里面提到的。但是有时候并不想引入Promise，能简单处理先简单处理。这个时候就可以用递归，如下代码所示： 12345678910111213var ids = [34112, 98325, 68125];">
-<meta property="og:updated_time" content="2017-07-08T07:47:13.000Z">
+<meta property="og:updated_time" content="2017-07-08T08:02:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="接触过的前端数据结构与算法">
 <meta name="twitter:description" content="1. 递归递归就是自己调自己，递归在前端里面算是一种比较常用的算法。假设现在有一堆数据要处理，要实现上一次请求完成了，才能去调下一个请求。一个是可以用Promise，就像《前端与SQL》这篇文章里面提到的。但是有时候并不想引入Promise，能简单处理先简单处理。这个时候就可以用递归，如下代码所示： 12345678910111213var ids = [34112, 98325, 68125];">
@@ -61,7 +61,7 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.kkk.world"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="blog.kkk.world"></form>
       </div>
     </div>
   </div>
@@ -95,26 +95,19 @@
 <p>再来讲另外一个场景：DOM树。</p>
 <p>由于DOM是一棵树，而树的定义本身就是用的递归定义，所以用递归的方法处理树，会非常地简单自然。例如用递归实现一个查DOM的功能document.getElementById。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function getElementById(node, id)&#123;</div><div class="line">    if(!node) return null;</div><div class="line">    if(node.id === id) return node;</div><div class="line">    for(var i = 0; i &lt; node.childNodes.length; i++)&#123;</div><div class="line">        var found = getElementById(node.childNodes[i], id);</div><div class="line">        if(found) return found;</div><div class="line">    &#125;</div><div class="line">    return null;</div><div class="line">&#125;</div><div class="line">getElementById(document, &quot;d-cal&quot;);</div></pre></td></tr></table></figure>
+<p>document是DOM树的根结点，一般从document开始往下找。在for循环里面先找document的所有子结点，对所有子结点递归查找他们的子结点，一层一层地往下查找。如果已经到了叶子结点了还没有找到，则在第二行代码的判断里面返回null，返回之后for循环的i加1，继续下一个子结点。如果当前结点的id符合查找条件，则一层层地返回。所以这是一个深度优先的遍历，每次都先从根结点一直往下直到叶子结点，再从下往上返回。</p>
+<p>最后在控制台验证一下，执行结果如下图所示：</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.kkk.world/2017/07/08/接触过的前端数据结构与算法/" data-id="cj4uzkpiw0000wnucla2dh3nd" class="article-share-link">Share</a>
+      <a data-url="blog.kkk.world/2017/07/08/接触过的前端数据结构与算法/" data-id="cj4v05m8q0000i2uccfzgcls2" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2017/07/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -148,10 +141,6 @@
         
           <li>
             <a href="/2017/07/08/接触过的前端数据结构与算法/">接触过的前端数据结构与算法</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/08/hello-world/">Hello World</a>
           </li>
         
       </ul>
